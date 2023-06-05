@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class MainApp {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -30,8 +30,8 @@ public class MainApp {
             System.out.print(user);
         }
 
-        System.out.println(userService.getUserWithCar("Car1", 1000));
-        System.out.println(userService.getUserWithCar("Car2", 2000));
+        System.out.println(userService.getUserByModelAndSeries("Car1", 1000));
+        System.out.println(userService.getUserByModelAndSeries("Car2", 2000));
 
         context.close();
     }

@@ -21,11 +21,11 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
-   public User getUserWithCar(String model, int series) {
+   public User getUserByModelAndSeries(String model, int series) {
 
-      String asd3 = "from User user where user.car.model = :model and user.car.series = :series";
+      String hql = "from User user where user.car.model = :model and user.car.series = :series";
 
-      TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(asd3);
+      TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql);
 
       query.setParameter("model", model).setParameter("series", series);
 
